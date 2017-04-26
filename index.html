@@ -1,1 +1,520 @@
-hello world
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>软件测试流程</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">产品测试流程</h1>
+
+<h2 id="toc_1">目录</h2>
+
+<blockquote>
+<ol>
+<li><p>需求 Review</p></li>
+<li><p>测试设计   </p>
+
+<blockquote>
+<p>2.1 测试用例编写<br>
+2.2 测试场景设计  </p>
+</blockquote></li>
+<li><p>测试用例&amp;场景 Review </p></li>
+<li><p>开发自测</p>
+
+<blockquote>
+<p>4.1 单元测试<br>
+4.2 确认测试<br>
+4.3 集成测试            </p>
+</blockquote></li>
+<li><p>验收测试</p>
+
+<blockquote>
+<p>5.1 功能测试<br>
+5.2 性能测试<br>
+5.3 安全测试<br>
+5.4 兼容性测试</p>
+</blockquote></li>
+<li><p>验收测试报告</p></li>
+<li><p>线上 Bug 处理系统</p>
+
+<blockquote>
+<p>7.1 线上 Bug 采集<br>
+7.1 线上 Bug Review</p>
+</blockquote></li>
+<li><p>测试总结</p>
+
+<blockquote>
+<p>8.1 测试流程总结<br>
+8.2 开发流程总结</p>
+</blockquote></li>
+<li><p>产品测试原则</p></li>
+</ol>
+</blockquote>
+
+<hr>
+
+<h2 id="toc_2">1. 需求 Review</h2>
+
+<p>策划完成的需求文档由开发、测试、运营进行 Review，提出 Review 意见并做出修改。通过 初步 Review 发现需求的漏洞并提早改掉，提高之后整个开发过程的效率。</p>
+
+<h2 id="toc_3">2. 测试设计</h2>
+
+<h3 id="toc_4">2.1 测试用例编写</h3>
+
+<p><strong>测试用例是测试设计的一个产出物，它直接体现测试设计的思想，一份漂亮的测试用例不仅仅是设计思路的优，更是便于流转和执行，具有可读性、传递性。</strong></p>
+
+<h4 id="toc_5">用例模板:</h4>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">用例编号</th>
+<th style="text-align: center">用例标题</th>
+<th style="text-align: right">预置条件</th>
+<th style="text-align: right">优先级</th>
+<th style="text-align: right">测试步骤</th>
+<th style="text-align: right">预期结果</th>
+<th style="text-align: right">是否通过</th>
+<th style="text-align: right">备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">项目名-模块名-001</td>
+<td style="text-align: center">功能模块简报</td>
+<td style="text-align: right">测试用例执行前提的条件</td>
+<td style="text-align: right">紧急/正常/较弱</td>
+<td style="text-align: right">尽量简洁</td>
+<td style="text-align: right">期望结果</td>
+<td style="text-align: right">✅</td>
+<td style="text-align: right">注意事项</td>
+</tr>
+<tr>
+<td style="text-align: left">例:上海天气-天气预警-001</td>
+<td style="text-align: center">天气预报-&gt;天气预警</td>
+<td style="text-align: right">气象局有天气预警发布时</td>
+<td style="text-align: right">正常</td>
+<td style="text-align: right">点击预警按钮-进入预警地图</td>
+<td style="text-align: right">有预警时正常显示预警并显示正确区县的预警信息</td>
+<td style="text-align: right">❌</td>
+<td style="text-align: right">只有有预警才出现</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="toc_6">参考文档</h4>
+
+<p><a href="http://www.jianshu.com/p/b7e349639501">如何写一份漂亮的测试用例？</a></p>
+
+<h3 id="toc_7">2.2 测试场景设计</h3>
+
+<p>测试场景设计主要也就是测试环境问题,设计时应考虑到尽可能完备的情景.如不同浏览器和浏览器的版本/不同网络状态等,应尽量列出并在开发时做好相应的容错。</p>
+
+<h4 id="toc_8">参考文档</h4>
+
+<p><a href="https://www.bstester.com/2014/02/ce-shi-yong-li-she-ji-bai-pi-shu-chang-jing-she-ji-fang-fa">测试用例设计白皮书－－场景设计方法</a></p>
+
+<h2 id="toc_9">3. 测试用例&amp;场景 Review</h2>
+
+<p>参与测试设计人员针对需求写出粗略的用例点与场景之后，可再让策划、开发、测试、运营 Review 一遍，目的还是发现需求的遗漏点，由于测试设计人员已经思考了很多测试点，相当于是对需求进行了细化和剖析，这个 Review 环节还是能发现很多需求的漏洞。</p>
+
+<h2 id="toc_10">4. 开发自测</h2>
+
+<h3 id="toc_11">4.1 单元测试</h3>
+
+<p>集中对用代码实现的每一个程序单元进行测试，检查各个程序模块是否正确地实现了规定的功能。可以借助一些自动化测试工具提升效率。</p>
+
+<h3 id="toc_12">4.2 确认测试</h3>
+
+<p>检查已实现的软件是否满足了需求规格说明中确定了的各种需求，以及代码配置是否完全、正确。</p>
+
+<h3 id="toc_13">4.3 集成测试</h3>
+
+<p>把已测试过的模块组装起来，测试是否与其他模块有冲突。</p>
+
+<h2 id="toc_14">5. 验收测试</h2>
+
+<h3 id="toc_15">5.1 功能测试</h3>
+
+<p>是否完成所有功能模块与需求.</p>
+
+<h3 id="toc_16">5.2 性能测试</h3>
+
+<p>如服务器的压力测试/网页加载速度等.</p>
+
+<h3 id="toc_17">5.3 安全测试</h3>
+
+<p>前后端 Review 部分关乎安全性模块,做出安全评估及改进意见.</p>
+
+<h3 id="toc_18">5.4 兼容性测试</h3>
+
+<p>提升在不同使用环境下产品的稳定性,并在开发进行时就应根据客户的需求兼容性作出相应考虑.</p>
+
+<h2 id="toc_19">6. 验收测试报告</h2>
+
+<p>上线以前，应根据验收测试的结果整理一份报告，重点指出测试过程中发现的问题、及上线以后可能会出的质量问题，并在项目群或者召集会会议把这些风险与相关人员一一沟通过。</p>
+
+<h2 id="toc_20">7. 线上 Bug 处理系统</h2>
+
+<h3 id="toc_21">7.1 线上 Bug 采集</h3>
+
+<ul>
+<li>1. 线上自测出现的 Bug 处理与反馈.</li>
+<li>2. 客户及用户反馈的问题.</li>
+<li>3. 使用第三方监控工具对产品多次出现 exception 的地方进行还原并分析原因.</li>
+</ul>
+
+<h3 id="toc_22">7.2 线上 Bug Review</h3>
+
+<p>对于线上发现的Bug，应建立完整的 <strong>Bug 分析流程</strong>，重点分析这个线上 Bug 产生的原因、线上 Bug 的影响范围,然后应根据分析结果在最快时间内做出 Bug 解决方案。此线上 Bug Review 流程应是一个不断循环完善的过程,但此过程应该是朝着高效率低时耗的方向不断发展进步。</p>
+
+<h2 id="toc_23">8. 测试总结</h2>
+
+<h3 id="toc_24">8.1 测试流程总结</h3>
+
+<ul>
+<li>总结该次测试流程的完整度和严谨性,对其中影响过效率的部分应作出思考和改进.</li>
+<li>对测试流程进行后效率提升的地方做出记录和总结.</li>
+</ul>
+
+<h3 id="toc_25">8.2 开发流程总结</h3>
+
+<ul>
+<li>在开发过程中遇到的有代表性的 Bug 和解决方案作为案例分析,内部分享交流,避免同类 Bug 再犯.</li>
+<li>对开发自测的环节中自动化测试的经验与线上 Bug 的收集解决方案进行总结,提高整体团队测试与开发效率.</li>
+</ul>
+
+<h2 id="toc_26">9. 产品测试原则</h2>
+
+<p>在<strong>保障研发效率</strong>的前提下<strong>提高产品质量</strong>。</p>
+
+
+
+
+</body>
+
+</html>
